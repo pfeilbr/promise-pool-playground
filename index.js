@@ -12,7 +12,7 @@ function sleep(ms) {
   const { results, errors } = await PromisePool.for(randomNumbers)
     .withConcurrency(100)
     .process(async (num, index, pool) => {
-        console.log(`${index}: start`)
+      console.log(`${index}: start`);
       await sleep(Math.floor(Math.random() * 250));
       return num * 2;
     });
